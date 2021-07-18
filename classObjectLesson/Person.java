@@ -7,6 +7,27 @@ public class Person {
     int personAge;
     boolean isMarried;
 
+    //10
+    //getters and setters
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+
+    public int getPersonAge() {
+        return personAge;
+    }
+
+    public boolean isMarried() {
+        return isMarried;
+    }
+
+    public void setMarried(boolean married) {
+        isMarried = married;
+    }
 
     //2
     public Person() {
@@ -78,27 +99,6 @@ public class Person {
         return f;
     }
 
-    //10
-    //getters and setters
-    public String getPersonName() {
-        return personName;
-    }
-
-    public void setPersonName(String personName) {
-        this.personName = personName;
-    }
-
-    public int getPersonAge() {
-        return personAge;
-    }
-
-    public boolean isMarried() {
-        return isMarried;
-    }
-
-    public void setMarried(boolean married) {
-        isMarried = married;
-    }
 
     public static void main(String[] args) {
         //5//7
@@ -121,6 +121,9 @@ public class Person {
         for (Person item : PersonMass) {
             System.out.println("Person name " + item.personName);
         }
+
+        System.out.println(String.format(String.valueOf(person4)));;
+
 
         //4
         if
