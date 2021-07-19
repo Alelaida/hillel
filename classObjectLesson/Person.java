@@ -4,7 +4,7 @@ public class Person {
 
     //1
     String personName;
-    int personAge;
+    private int personAge;
     boolean isMarried;
 
     //10
