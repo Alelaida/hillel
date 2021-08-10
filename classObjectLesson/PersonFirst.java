@@ -1,6 +1,6 @@
 package Rep.classObjectLesson;
 
-public class Person {
+public class PersonFirst {
 
     //1
     String personName;
@@ -30,22 +30,22 @@ public class Person {
     }
 
     //2
-    public Person() {
+    public PersonFirst() {
         personName = "Ivan";
         personAge = 30;
         isMarried = false;
     }
 
-    public Person(String personName) {
+    public PersonFirst(String personName) {
         this.personName = personName;
     }
 
-    public Person(String personName, int personAge) {
+    public PersonFirst(String personName, int personAge) {
         this.personName = personName;
         this.personAge = personAge;
     }
 
-    public Person(String personName, int personAge, boolean isMarried) {
+    public PersonFirst(String personName, int personAge, boolean isMarried) {
         this.personName = personName;
         this.personAge = personAge;
         this.isMarried = isMarried;
@@ -63,12 +63,12 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        Person person = (Person) o;
+        PersonFirst personFirst = (PersonFirst) o;
 
-        if (person.personAge != personAge) return false;
-        if (person.isMarried != isMarried) return false;
+        if (personFirst.personAge != personAge) return false;
+        if (personFirst.isMarried != isMarried) return false;
 
-        return (person.personName.equals(personName));
+        return (personFirst.personName.equals(personName));
     }
 
     //4
@@ -102,47 +102,47 @@ public class Person {
 
     public static void main(String[] args) {
         //5//7
-        Person person1 = new Person();
-        System.out.println("person1: " + person1.personAge + " " + person1.personName + " " + person1.isMarried);
-        Person person2 = new Person("Alex");
-        System.out.println("person2: " + person2.personAge + " " + person2.personName + " " + person2.isMarried);
-        Person person3 = new Person("Ben", 25);
-        System.out.println("person3: " + person3.personAge + " " + person3.personName + " " + person3.isMarried);
-        Person person4 = new Person("Sam", 40, false);
-        System.out.println("person4 " + person4.personAge + " " + person4.personName + " " + person4.isMarried);
-        Person person5 = new Person();
+        PersonFirst personFirst1 = new PersonFirst();
+        System.out.println("person1: " + personFirst1.personAge + " " + personFirst1.personName + " " + personFirst1.isMarried);
+        PersonFirst personFirst2 = new PersonFirst("Alex");
+        System.out.println("person2: " + personFirst2.personAge + " " + personFirst2.personName + " " + personFirst2.isMarried);
+        PersonFirst personFirst3 = new PersonFirst("Ben", 25);
+        System.out.println("person3: " + personFirst3.personAge + " " + personFirst3.personName + " " + personFirst3.isMarried);
+        PersonFirst personFirst4 = new PersonFirst("Sam", 40, false);
+        System.out.println("person4 " + personFirst4.personAge + " " + personFirst4.personName + " " + personFirst4.isMarried);
+        PersonFirst personFirst5 = new PersonFirst();
 
         //6
-        person4.setPersonAge(39);
-        System.out.println("Changed age for person4: " + person4.personAge);
+        personFirst4.setPersonAge(39);
+        System.out.println("Changed age for person4: " + personFirst4.personAge);
 
         //8
-        Person[] PersonMass = {person1, person2, person3, person4};
-        for (Person item : PersonMass) {
+        PersonFirst[] personFirstMasses = {personFirst1, personFirst2, personFirst3, personFirst4};
+        for (PersonFirst item : personFirstMasses) {
             System.out.println("Person name " + item.personName);
         }
 
-        System.out.println(String.format(String.valueOf(person4)));;
+        System.out.println(String.format(String.valueOf(personFirst4)));;
 
 
         //4
         if
-        (person1.equals(person4)) {
+        (personFirst1.equals(personFirst4)) {
             System.out.println("equal");
         } else {
             System.out.println("not equal");
         }
         if
-        (person1.equals(person5)) {
+        (personFirst1.equals(personFirst5)) {
             System.out.println("equal");
         } else {
             System.out.println("not equal");
         }
-        System.out.println(person1.hashCode());
-        System.out.println(person4.hashCode());
+        System.out.println(personFirst1.hashCode());
+        System.out.println(personFirst4.hashCode());
 
 //9
-        System.out.println("The person had " + person1.Anniversary() + " anniversaries");
-        System.out.println("Fist letter of the name is " + person1.initial());
+        System.out.println("The person had " + personFirst1.Anniversary() + " anniversaries");
+        System.out.println("Fist letter of the name is " + personFirst1.initial());
     }
 }

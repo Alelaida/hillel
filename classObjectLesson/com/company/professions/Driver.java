@@ -1,25 +1,19 @@
 package Rep.classObjectLesson.com.company.professions;
 
-import Rep.classObjectLesson.Person;
 
 public class Driver extends Person {
-    String fullName;
     int experience;
+    Person Person;
 
-    public Driver(String personName, int personAge, boolean isMarried, String fullName, int experience) {
-        super(personName, personAge, isMarried);
-        this.fullName = fullName;
+    public Driver(String fullName, int age, int experience) {
+        super(fullName, age);
         this.experience = experience;
+
     }
 
 
-    public String getFullName() {
-        return fullName;
-    }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+
 
     public int getExperience() {
         return experience;
@@ -31,11 +25,21 @@ public class Driver extends Person {
 
     @Override
     public String toString() {
-        return String.format("Driver's full name: %s. Driving experience: %s. ", fullName, experience);
+        return String.format("Driver's full name: %s. Driving experience: %s. ", getFullName(), experience);
     }
 
-    public static void main(String[] args) {
-        Driver driver1 = new Driver("Sam", 40, true, "Pertrov S.S", 10);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Driver driver = (Driver) o;
 
+        return (driver.getFullName().equals(getFullName()) && driver.experience == experience);
+    }
+
+    @Override
+    public int hashCode() {
+        return getFullName().hashCode() + experience + 31;
     }
 }

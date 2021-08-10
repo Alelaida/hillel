@@ -1,11 +1,13 @@
 package Rep.classObjectLesson.com.company.details;
 
+import Rep.classObjectLesson.com.company.vehicles.Car;
+
 public class Engine {
     String company;
     int power;
 
     public Engine(String company, int power) {
-        this.company = "comp";
+        this.company = company;
         this.power = 100;
     }
 
@@ -27,11 +29,22 @@ public class Engine {
 
     @Override
     public String toString() {
-        return String.format("Car company: %s. Car Marka: %s.  Car power: %s. ", company, power);
+        return String.format("Car company: %s. Car power: %s. ", company, power);
     }
 
-    public static void main(String[] args) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Engine engine = (Engine) o;
 
-        Engine engine1 = new Engine("Abc", 120);
+        return (engine.company.equals(company) && engine.power == power);
     }
+
+    @Override
+    public int hashCode() {
+        return company.hashCode() +power + 31;
+    }
+
 }
